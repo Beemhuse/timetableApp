@@ -1,0 +1,9 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+media
+db.sqlite3
+<<<<<<< HEAD
+/_pycache_
+=======
+>>>>>>> 7cd2f80cd1136b8ae43cdcb4d5d9af2b90ad8af2
