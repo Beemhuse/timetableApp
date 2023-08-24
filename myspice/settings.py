@@ -41,17 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'users',
-     'rest_framework.authtoken',
+    'rest_framework.authtoken',
     'dj_rest_auth',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'dj_rest_auth.registration',
     'paystack',
-
     'django_filters',
-
-    'corsheaders'
+    'corsheaders',
+    'system'
 
 ]
 SITE_ID = 1
@@ -166,4 +165,3 @@ PAYSTACK_SECRET_KEY = 'sk_test_fd5c9446ca79d0a32fb9c8b2ac696226fbd90227'
 PAYSTACK_PUBLIC_KEY = 'pk_test_6bcbeebce0a75224cd8969b3049c5d64addb21eb'
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_SECURE = False
-
