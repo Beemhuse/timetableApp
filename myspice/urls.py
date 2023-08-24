@@ -18,11 +18,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('users.urls')),
     path('', include('system.urls')),
+    path('schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('doc/', SpectacularSwaggerView.as_view(), name='schema_view'),
     # path('paystack/', include('paystack.urls')),
     # path('api/', include('project.urls'))
 

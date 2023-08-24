@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'paystack',
     'django_filters',
     'corsheaders',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     'system'
 
 ]
@@ -107,7 +109,7 @@ REST_AUTH = {
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
         # 'rest_framework.permissions.IsAdminUser'
 
     ],
@@ -115,9 +117,8 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication"
         # "rest_framework.authentication.SessionAuthentication",
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
-
-SITE_ID = 1
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -136,6 +137,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Time Table API Doc',
+    'DESCRIPTION': '',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SWAGGER_UI_DIST': 'SIDECAR',  # shorthand to use the sidecar instead
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
